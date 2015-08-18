@@ -1,0 +1,4 @@
+C:\Users\Silvio\Documents\Projetos\TraceFood\platforms\android\build\intermediates\classes\debug
+C:\Users\Silvio\Documents\Projetos\TraceFood\platforms\android\build\intermediates\pre-dexed\debug\sqlite-connector-67dce66fd29ce7df14c6acd8e036a88a7283157b.jar
+C:\Users\Silvio\Documents\Projetos\TraceFood\platforms\android\build\intermediates\pre-dexed\debug\classes-31bb2edf255235a66d7a298e01042aae877c9168.jar
+C:\Users\Silvio\Documents\Projetos\TraceFood\platforms\android\build\intermediates\pre-dexed\debug\sqlite-native-driver-6c29ef6781b60b1f810ceda7affc2dba98773939.jar

@@ -1,0 +1,17 @@
+<ion-view view-title="Alimentos" cache-view="false">
+	<ion-nav-buttons side="right">
+		<!--button class="button button-icon button-clear ion-android-add" ng-click="add()"></button>
+		<a class="button button-icon button-clear ion-pie-graph" href="#/app/estatistica"></a-->
+		<button class="button button-icon icon ion-android-more-vertical" ng-click="openPopover($event)"></button>
+	</ion-nav-buttons>
+	<ion-content>
+		<ion-list>
+			<ion-item collection-repeat="alimento in alimentos">
+				{{alimento.descricao}}
+
+				<ion-option-button class="button-dark" ng-click="edit(alimento)">Editar</ion-option-button>
+				<ion-option-button class="button-assertive" ng-click="del(alimento)">Excluir</ion-option-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

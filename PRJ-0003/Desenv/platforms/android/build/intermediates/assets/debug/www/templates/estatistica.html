@@ -1,0 +1,20 @@
+<ion-view view-title="Estatística">
+	<ion-nav-buttons side="right">
+		<button class="button button-icon button-clear ion-refresh" ng-click="carregaGraficoPeso()"></button>
+	</ion-nav-buttons>
+	<ion-content>
+		<div class="card">
+			<div class="item item-divider">
+				Histórico de Peso
+			</div>
+			<div class="item item-text-wrap">
+				<canvas id="chartPeso" 
+						class="chart chart-line" 
+						data="chartPeso.data"
+						labels="chartPeso.labels"
+						series="chartPeso.series"
+						height="100"></canvas>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
