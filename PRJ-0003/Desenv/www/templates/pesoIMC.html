@@ -1,0 +1,60 @@
+<ion-modal-view ng-controller="PesoIMCCtrl">
+	<ion-header-bar>
+		<button class="button button-clear" ng-click="close()">Fechar</button>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list">
+			<label class="item item-input">
+				<span class="input-label">Altura</span>
+				<input type="number" ng-model="modal.altura" />
+			</label>
+
+			<label class="item item-input">
+				<span class="input-label">Peso</span>
+				<input type="number" ng-model="modal.peso.peso" readonly />
+			</label>
+
+			<div class="item item-divider"></div>
+
+			<label class="item item-input">
+				<span class="input-label">IMC</span>
+				<input type="number" value="{{modal.peso.peso / (modal.altura * modal.altura)}}" readonly />
+			</label>
+
+			<div class="item item-divider"></div>
+
+			<div class="row">
+				<div class="col"><b>Resultado</b></div>
+				<div class="col"><b>Situação</b></div>
+			</div>
+			<div class="row">
+				<div class="col">Abaixo de 17</div>
+				<div class="col">Muito abaixo do <em>peso</em></div>
+			</div>
+			<div class="row">
+				<div class="col">Entre 17 e 18,49</div>
+				<div class="col">Abaixo do <em>peso</em></div>
+			</div>
+			<div class="row">
+				<div class="col">Entre 18,5 e 24,99</div>
+				<div class="col"><em>Peso</em> normal</div>
+			</div>
+			<div class="row">
+				<div class="col">Entre 25 e 29,99</div>
+				<div class="col">Acima do <em>peso</em></div>
+			</div>
+			<div class="row">
+				<div class="col">Entre 30 e 34,99</div>
+				<div class="col"><em>Obesidade</em> I</div>
+			</div>
+			<div class="row">
+				<div class="col">Entre 35 e 39,99</div>
+				<div class="col"><em>Obesidade</em> II (severa)</div>
+			</div>
+			<div class="row">
+				<div class="col">Acima de 40</div>
+				<div class="col"><em>Obesidade</em> III (mórbida)</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-modal-view>

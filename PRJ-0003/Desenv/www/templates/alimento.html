@@ -1,0 +1,98 @@
+<ion-modal-view>
+	<form name="formAlimento" novalidate ng-submit="addAlimento(formAlimento, modal.alimento)">
+		<ion-header-bar>
+			<button class="button button-clear" ng-click="closeModal();">Cancelar</button>
+			<button class="button button-clear" type="submit">Salvar</button>
+		</ion-header-bar>
+		<ion-content>
+			<div class="list">
+				<label class="item item-input">
+					<span class="input-label">Descrição</span>
+					<input type="text" name="descricao" placeholder="Descrição" ng-model="modal.alimento.descricao" required />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Valor energético</span>
+					<input type="number" name="valorEnergetico" placeholder="Valor energético" ng-model="modal.alimento.valorEnergetico" required />
+				</label>
+
+		    	<label class="item item-input item-select">
+		    		<div class="input-label">Tipo:</div>
+		    		<select name="tipo" ng-model="modal.alimento.tipo" ng-options="item.value for item in alimentoTipos" required>
+					</select>
+				</label>
+				
+				<div class="item item-divider">Informações Nutricionais</div>
+
+				<label class="item item-input">
+					<span class="input-label">Carboidratos</span>
+					<input type="number" placeholder="Carboidratos" ng-model="modal.alimento.carboidratos" />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Proteínas</span>
+					<input type="number" placeholder="Proteínas" ng-model="modal.alimento.proteinas" />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Gorduras totais</span>
+					<input type="number" placeholder="Gorduras totais" ng-model="modal.alimento.gordurasTotais" />
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Gorduras trans</span>
+					<input type="number" placeholder="Gorduras trans" ng-model="modal.alimento.gordurasTrans" />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Cálcio</span>
+					<input type="number" placeholder="Cálcio" ng-model="modal.alimento.calcio" />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Ferro</span>
+					<input type="number" placeholder="Ferro" ng-model="modal.alimento.ferro" />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Sódio</span>
+					<input type="number" placeholder="Sódio" ng-model="modal.alimento.sodio" />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Vitamina A</span>
+					<input type="number" placeholder="Vitamina A" ng-model="modal.alimento.vitaminaA" />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Vitamina C</span>
+					<input type="number" placeholder="Vitamina C" ng-model="modal.alimento.vitaminaC" />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Vitamina D</span>
+					<input type="number" placeholder="Vitamina D" ng-model="modal.alimento.vitaminaD" />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Vitamina E</span>
+					<input type="number" placeholder="Vitamina E" ng-model="modal.alimento.vitaminaE" />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Fibra alimentar</span>
+					<input type="number" placeholder="Fibra alimentar" ng-model="modal.alimento.fibraAlimentar" />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Colesterol</span>
+					<input type="number" placeholder="Colesterol" ng-model="modal.alimento.colesterol" />
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Potássio</span>
+					<input type="number" placeholder="Potássio" ng-model="modal.alimento.potassio" />
+				</label>
+			</div>
+		</ion-content>
+	</form>
+</ion-modal-view>

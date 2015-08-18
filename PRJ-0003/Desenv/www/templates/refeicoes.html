@@ -1,0 +1,14 @@
+<ion-view view-title="Refeições">
+	<ion-nav-buttons side="right">
+		<button class="button button-clear ion-plus" ng-click="add()"></button>
+	</ion-nav-buttons>
+	<ion-content>
+		<ion-list>
+			<ion-item ng-repeat="refeicao in refeicoes" href="#/app/refeicao/{{refeicao.id}}">
+				{{refeicao.data}}
+
+			    <ion-option-button class="button-assertive" ng-click="del({{refeicao.id}})">Excluir</ion-option-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
