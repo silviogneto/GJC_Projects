@@ -1,0 +1,12 @@
+c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\bin\Debug\SistemaXML.exe
+c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\bin\Debug\SistemaXML.pdb
+c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\SistemaXML.csprojResolveAssemblyReference.cache
+c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\Principal.baml
+c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\Principal.g.cs
+c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\App.g.cs
+c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\SistemaXML_MarkupCompile.cache
+c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\SistemaXML.g.resources
+c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\SistemaXML.Properties.Resources.resources
+c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\SistemaXML.csproj.GenerateResource.Cache
+c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\SistemaXML.exe
+c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\SistemaXML.pdb
