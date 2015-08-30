@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -22,7 +23,7 @@ namespace SistemaXML
     {
         #region Attributes
 
-        private string _pastaInicial = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        private string _pastaInicial;
 
         #endregion
 
@@ -41,18 +42,34 @@ namespace SistemaXML
             {
                 dialog.Filter = "Arquivo XML (*.xml)|*.xml";
                 dialog.Multiselect = false;
-                dialog.InitialDirectory = _pastaInicial;
+
+                if (!string.IsNullOrEmpty(_pastaInicial))
+                    dialog.InitialDirectory = _pastaInicial;
 
                 if (dialog.ShowDialog() == true)
                 {
+                    var arquivo = dialog.FileName;
 
-                    _pastaInicial = System.IO.Path.GetDirectoryName(dialog.FileName);
+                    txtArquivo.Text = System.IO.Path.GetFileName(arquivo);
+                    _pastaInicial = System.IO.Path.GetDirectoryName(arquivo);
+
+                    ImportarXml(arquivo);
                 }
             }
             finally
             {
                 dialog = null;
             }
+        }
+
+        #endregion
+
+        #region Metodos
+
+        private void ImportarXml(string nomeArquivo)
+        {
+            var imp = new Modelo.Importar();
+            imp.AlterarXml(nomeArquivo);
         }
 
         #endregion

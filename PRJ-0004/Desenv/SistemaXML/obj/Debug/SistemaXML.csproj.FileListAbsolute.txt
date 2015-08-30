@@ -10,3 +10,15 @@ c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\Siste
 c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\SistemaXML.csproj.GenerateResource.Cache
 c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\SistemaXML.exe
 c:\users\silvio.goncalves\documents\visual studio 2013\Projects\SistemaXML\SistemaXML\obj\Debug\SistemaXML.pdb
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.exe
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.pdb
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\bin\Debug\SistemaXML.exe
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\bin\Debug\SistemaXML.pdb
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.csprojResolveAssemblyReference.cache
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\Principal.baml
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\Principal.g.cs
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\App.g.cs
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML_MarkupCompile.cache
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.g.resources
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.Properties.Resources.resources
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.csproj.GenerateResource.Cache
