@@ -69,6 +69,9 @@ namespace SistemaXML
         private void ImportarXml(string nomeArquivo)
         {
             var imp = new Modelo.Importar();
+            imp.NatOp = txtNatOp.Text.Trim();
+            imp.IndPag = txtIndPag.Text.Trim();
+            imp.ModFrete = txtModFrete.Text.Trim();
             imp.AlterarXml(nomeArquivo);
         }
 

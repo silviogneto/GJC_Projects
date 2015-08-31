@@ -11,6 +11,10 @@ namespace SistemaXML.Modelo
     {
         #region Atributos
 
+        internal string NatOp { get; set; }
+        internal string IndPag { get; set; }
+        internal string ModFrete { get; set; }
+
         #endregion
 
         #region Metodos
@@ -32,8 +36,8 @@ namespace SistemaXML.Modelo
                 #region ide
 
                 var nodeIde = xmlDoc.SelectSingleNode("//nsnfe:ide", ns);
-                nodeIde["natOp"].InnerText = "VENDA DE MERCADORIA";
-                nodeIde["indPag"].InnerText = "0";
+                nodeIde["natOp"].InnerText = NatOp; // "VENDA DE MERCADORIA";
+                nodeIde["indPag"].InnerText = IndPag; // "0";
 
                 #endregion
 
@@ -42,6 +46,8 @@ namespace SistemaXML.Modelo
                 var nodeTransp = xmlDoc.SelectSingleNode("//nsnfe:transp", ns);
                 foreach (XmlNode n in nodeTransp.ChildNodes)
                     LimparNodes(n);
+
+                nodeTransp["modFrete"].InnerText = ModFrete; // "9";
 
                 #endregion
 
