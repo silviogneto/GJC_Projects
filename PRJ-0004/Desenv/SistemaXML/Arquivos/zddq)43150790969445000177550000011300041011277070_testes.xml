@@ -5,8 +5,8 @@
 			<ide>
 				<cUF>43</cUF>
 				<cNF>01127707</cNF>
-				<natOp>VENDAS DE PRODUCAO ESTABELECIMENTO # VENDA DE MERCADORIA</natOp>
-				<indPag>1 # 0</indPag>
+				<natOp>VENDAS DE PRODUCAO ESTABELECIMENTO</natOp>
+				<indPag>1</indPag>
 				<mod>55</mod>
 				<serie>0</serie>
 				<nNF>1130004</nNF>
@@ -69,18 +69,18 @@
 					<cEAN></cEAN>
 					<xProd>ODORIZANTE DE AMBIENTES ALECRIM</xProd>
 					<NCM>33074900</NCM>
-					<CFOP>6101 # ALTERAR PARA CFOP VENDA DENTRO DO ESTADO</CFOP>
+					<CFOP>6101</CFOP>
 					<uCom>ml</uCom>
 					<qCom>1.0000</qCom>
-					<vUnCom>11.39 # AUMENTAR CONFORME %</vUnCom>
-					<vProd>11.39 # MULTIPLICAR NOVO UNITÁRIO PELA QUANTIDADE</vProd>
+					<vUnCom>11.39</vUnCom>
+					<vProd>11.39</vProd>
 					<cEANTrib></cEANTrib>
 					<uTrib>ml</uTrib>
 					<qTrib>1.0000</qTrib>
-					<vUnTrib>11.39 # COPIAR VALOR UNITÁRIO</vUnTrib>
+					<vUnTrib>11.39</vUnTrib>
 					<indTot>1</indTot>
 				</prod>
-				<imposto># COPIAR CONFORME CFOP
+				<imposto>
 					<vTotTrib>0.00</vTotTrib>
 					<ICMS>
 						<ICMS00>
@@ -111,7 +111,7 @@
 							<CST>08</CST>
 						</COFINSNT>
 					</COFINS>
-				</imposto># SE TIVER ALGUMA OBSERVAÇÃO ANTES DO PRÓXIMO ITEM, APAGAR
+				</imposto>
 			</det>
 			<total>
 				<ICMSTot>
@@ -134,18 +134,18 @@
 				</ICMSTot>
 			</total>
 			<transp>
-				<modFrete>0 # 9</modFrete>
+				<modFrete>0</modFrete>
 				<transporta>
-					<CNPJ>88085485000376 # APAGAR</CNPJ>
-					<xNome>TRANSPORTADORA PLIMOR LTDA # APAGAR</xNome>
-					<xEnder>RUA WILLY EUGENIO FLECK 104 # APAGAR</xEnder>
-					<xMun>PORTO ALEGRE # APAGAR</xMun>
-					<UF>RS # APAGAR</UF>
+					<CNPJ>88085485000376</CNPJ>
+					<xNome>TRANSPORTADORA PLIMOR LTDA</xNome>
+					<xEnder>RUA WILLY EUGENIO FLECK 104</xEnder>
+					<xMun>PORTO ALEGRE</xMun>
+					<UF>RS</UF>
 				</transporta>
 				<vol>
-					<qVol>006 # APAGAR</qVol>
-					<marca>Especie # APAGAR</marca>
-					<pesoB>25 # APAGAR</pesoB>
+					<qVol>006</qVol>
+					<marca>Especie</marca>
+					<pesoB>25</pesoB>
 				</vol>
 			</transp>
 		</infNFe>

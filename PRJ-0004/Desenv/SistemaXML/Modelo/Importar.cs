@@ -14,6 +14,7 @@ namespace SistemaXML.Modelo
         internal string NatOp { get; set; }
         internal string IndPag { get; set; }
         internal string ModFrete { get; set; }
+        internal double Percent { get; set; }
 
         #endregion
 
@@ -51,6 +52,23 @@ namespace SistemaXML.Modelo
 
                 #endregion
 
+                #region Produtos
+
+                var produtos = xmlDoc.SelectNodes("//nsnfe:det", ns);
+                foreach (XmlNode node in produtos)
+                {
+                    XmlNode prod = node["prod"];
+
+                    var valUnit = Convert.ToDouble(prod["vUnCom"].InnerText);
+                    var novoValor = NovoValorPorPorcentagem(valUnit, Percent);
+
+                    prod["vUnCom"].InnerText = novoValor.ToString("F2");
+                    prod["vUnTrib"].InnerText = novoValor.ToString("F2");
+                    prod["vProd"].InnerText = (Convert.ToDouble(prod["qCom"].InnerText) * novoValor).ToString("F2");
+                }
+
+                #endregion
+
                 xmlDoc.Save(nomeArquivo);
             }
             catch (Exception ex)
@@ -77,6 +95,17 @@ namespace SistemaXML.Modelo
 
             if (node.ChildNodes.Count == 0)
                 node.InnerText = "";
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="valor"></param>
+        /// <param name="porcentagem"></param>
+        /// <returns></returns>
+        private double NovoValorPorPorcentagem(double valor, double porcentagem)
+        {
+            return valor + (valor * (porcentagem / 100));
         }
 
         #endregion

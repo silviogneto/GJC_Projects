@@ -72,6 +72,7 @@ namespace SistemaXML
             imp.NatOp = txtNatOp.Text.Trim();
             imp.IndPag = txtIndPag.Text.Trim();
             imp.ModFrete = txtModFrete.Text.Trim();
+            imp.Percent = Convert.ToDouble(txtValorPercent.Text.Trim());
             imp.AlterarXml(nomeArquivo);
         }
 
