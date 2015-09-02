@@ -22,3 +22,8 @@ C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML
 C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.g.resources
 C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.Properties.Resources.resources
 C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.csproj.GenerateResource.Cache
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\bin\Debug\SistemaXML.exe.manifest
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\bin\Debug\SistemaXML.application
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.TrustInfo.xml
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.exe.manifest
+C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.application

@@ -9,9 +9,22 @@
         Height="300" 
         Width="500" 
         ResizeMode="CanMinimize" 
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Icon="doc-xml.ico">
 	<DockPanel>
-		<StatusBar Height="30" VerticalAlignment="Top" DockPanel.Dock="Bottom"/>
+		<StatusBar Height="30" VerticalAlignment="Top" DockPanel.Dock="Bottom">
+			<!--<StatusBar.ItemsPanel>
+				<ItemsPanelTemplate>
+					<StackPanel Orientation="Horizontal"/>
+				</ItemsPanelTemplate>
+			</StatusBar.ItemsPanel>-->
+			<StatusBarItem>
+				<TextBlock x:Name="txtStatus" Text="Pronto"/>
+			</StatusBarItem>
+			<Separator x:Name="separador" Visibility="Hidden" />
+			<StatusBarItem>
+				<ProgressBar x:Name="barraProgresso" Width="100" Height="20" Minimum="0" Maximum="100" Visibility="Hidden" />
+			</StatusBarItem>
+		</StatusBar>
 		<DockPanel>
 			<Border DockPanel.Dock="Top" Padding="5">
 				<DockPanel>
@@ -26,26 +39,29 @@
 						<RowDefinition Height="Auto"/>
 						<RowDefinition Height="Auto"/>
 						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
 					</Grid.RowDefinitions>
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="85" />
-						<ColumnDefinition Width="Auto" MinWidth="305" />
+						<ColumnDefinition Width="90" />
+						<ColumnDefinition />
 					</Grid.ColumnDefinitions>
 
 					<Label Grid.Column="0" Grid.Row="0" Content="&lt;natOp&gt;:" FontWeight="Bold" />
-					<TextBox x:Name="txtNatOp" Grid.Column="1" Grid.Row="0" TextWrapping="NoWrap" Text="VENDA DE MERCADORIA" VerticalContentAlignment="Center" Padding="5,0" Margin="2,2,3,2" />
+					<TextBox x:Name="txtNatOp" Grid.Column="1" Grid.Row="0" TextWrapping="NoWrap" Text="VENDA DE MERCADORIA" VerticalContentAlignment="Center" Padding="5,0" Margin="2" />
 
 					<Label Grid.Column="0" Grid.Row="1" Content="&lt;indPag&gt;:" FontWeight="Bold"/>
-					<TextBox x:Name="txtIndPag" Grid.Column="1" Grid.Row="1" TextWrapping="NoWrap" Text="0" VerticalContentAlignment="Center" Padding="5,0" Margin="2,2,3,2" />
+					<TextBox x:Name="txtIndPag" Grid.Column="1" Grid.Row="1" TextWrapping="NoWrap" Text="0" VerticalContentAlignment="Center" Padding="5,0" Margin="2" />
 
 					<Label Grid.Column="0" Grid.Row="2" Content="&lt;modFrete&gt;:" FontWeight="Bold"/>
-					<TextBox x:Name="txtModFrete" Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" Text="9" VerticalContentAlignment="Center" Padding="5,0" Margin="2,2,3,2" />
+					<TextBox x:Name="txtModFrete" Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" Text="9" VerticalContentAlignment="Center" Padding="5,0" Margin="2" />
 
 					<Label Grid.Column="0" Grid.Row="3" Content="&lt;%&gt;:" FontWeight="Bold"/>
 					<StackPanel Grid.Column="1" Grid.Row="3" Margin="2,2,3,0" Orientation="Horizontal">
-						<TextBox x:Name="txtValorPercent" TextWrapping="NoWrap" Text="30" VerticalContentAlignment="Center" Padding="5,0" Width="40" />
+						<TextBox x:Name="txtValorPercent" TextWrapping="NoWrap" Text="10" VerticalContentAlignment="Center" Padding="5,0" Width="40" PreviewTextInput="txtValorPercent_PreviewTextInput" />
 						<Label Content="%"/>
 					</StackPanel>
+
+					<Button x:Name="btnAlterarXml" Grid.Column="1" Grid.Row="4" Width="100" Margin="2" Height="35" HorizontalAlignment="Right" Click="btnAlterarXml_Click">Alterar Xml</Button>
 				</Grid>
 			</Border>
 		</DockPanel>

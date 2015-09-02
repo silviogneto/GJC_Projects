@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("arquivos/zddq)43150790969445000177550000011300041011277070_testes.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("doc-xml.ico")]
 
 
