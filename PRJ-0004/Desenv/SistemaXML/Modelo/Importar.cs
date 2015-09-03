@@ -9,15 +9,15 @@ using System.ComponentModel;
 
 namespace SistemaXML.Modelo
 {
-    internal class Importar
+    public class Importar
     {
         #region Atributos
 
-        internal string NatOp { get; set; }
-        internal string IndPag { get; set; }
-        internal string ModFrete { get; set; }
-        internal double Percent { get; set; }
-        internal BackgroundWorker Worker { get; set; }
+        public string NatOp { get; set; }
+        public string IndPag { get; set; }
+        public string ModFrete { get; set; }
+        public double Percent { get; set; }
+        public BackgroundWorker Worker { get; set; }
 
         #endregion
 
@@ -80,6 +80,30 @@ namespace SistemaXML.Modelo
                     prod["vUnTrib"].InnerText = novoValor.ToString("F2", provider);
                     prod["vProd"].InnerText = (Convert.ToDouble(prod["qCom"].InnerText, provider) * novoValor).ToString("F2", provider);
 
+                    //Regras CFOP
+
+                    //Se cfop == 6101 ou 6102 trocar para 5102
+                    //se cfop == 5401 ou 5403 ou 6401 ou 6403 trocar para 5405
+                    var cfopAtual = prod["CFOP"].InnerText;
+                    if (cfopAtual == "6101" || cfopAtual == "6102")
+                        prod["CFOP"].InnerText = "5102";
+                    else if (cfopAtual == "5401" || cfopAtual == "5403" || cfopAtual == "6401" || cfopAtual == "6403")
+                        prod["CFOP"].InnerText = "5405";
+
+                    #region Tag Imposto
+
+                    XmlNode nodeImposto = node["imposto"];
+                    nodeImposto.InnerText = "";
+
+                    XmlNode nodeImpostoNovo = CriarInfoImposto(xmlDoc, prod["CFOP"].InnerText);
+                    node["imposto"].InnerXml = nodeImpostoNovo.InnerXml;
+
+                    #endregion
+
+                    XmlNode xmlInfoAd = node["infAdProd"];
+                    if (xmlInfoAd != null)
+                        node.RemoveChild(xmlInfoAd);
+
                     progress = Progresso(progress, progressByProduct);
                 }
 
@@ -137,6 +161,102 @@ namespace SistemaXML.Modelo
             progresso += porcentagem;
             Worker.ReportProgress(progresso);
             return progresso;
+        }
+
+        /// <summary>
+        /// Metodo que monta o conteudo da tag imposto
+        /// </summary>
+        /// <param name="xmlDoc"></param>
+        /// <param name="cfop"></param>
+        /// <returns></returns>
+        private XmlNode CriarInfoImposto(XmlDocument xmlDoc, string cfop)
+        {
+            XmlNode nodeImposto = xmlDoc.CreateElement("imposto");
+
+            #region tag vTotTrib
+
+            XmlNode nodeVTotTrib = xmlDoc.CreateElement("vTotTrib");
+            nodeVTotTrib.InnerText = "0.00";
+
+            nodeImposto.AppendChild(nodeVTotTrib);
+
+            #endregion
+
+            #region tag ICMS
+
+            XmlNode nodeIcms = xmlDoc.CreateElement("ICMS");
+            XmlNode nodeIcmsSn = xmlDoc.CreateElement("ICMSSN102");
+
+            XmlNode nodeOrig = xmlDoc.CreateElement("orig");
+            nodeOrig.InnerText = "0";
+
+            nodeIcmsSn.AppendChild(nodeOrig);
+
+            XmlNode nodeCsoSn = xmlDoc.CreateElement("CSOSN");
+            if (cfop == "5102")
+                nodeCsoSn.InnerText = "102";
+            else if (cfop == "")
+                nodeCsoSn.InnerText = "500";
+
+            nodeIcmsSn.AppendChild(nodeCsoSn);
+
+            nodeIcms.AppendChild(nodeIcmsSn);
+
+            nodeImposto.AppendChild(nodeIcms);
+
+            #endregion
+
+            #region tag IPI
+
+            XmlNode nodeIpi = xmlDoc.CreateElement("IPI");
+            XmlNode nodeCEnq = xmlDoc.CreateElement("cEnq");
+            nodeCEnq.InnerText = "999";
+
+            nodeIpi.AppendChild(nodeCEnq);
+
+            XmlNode nodeIpiNt = xmlDoc.CreateElement("IPINT");
+            XmlNode nodeCst = xmlDoc.CreateElement("CST");
+            nodeCst.InnerText = "53";
+
+            nodeIpiNt.AppendChild(nodeCst);
+
+            nodeIpi.AppendChild(nodeIpiNt);
+
+            nodeImposto.AppendChild(nodeIpi);
+
+            #endregion
+
+            #region tag PIS
+
+            XmlNode nodePis = xmlDoc.CreateElement("PIS");
+            XmlNode nodePisNt = xmlDoc.CreateElement("PISNT");
+            XmlNode nodePisCst = xmlDoc.CreateElement("CST");
+            nodePisCst.InnerText = "08";
+
+            nodePisNt.AppendChild(nodePisCst);
+
+            nodePis.AppendChild(nodePisNt);
+
+            nodeImposto.AppendChild(nodePis);
+
+            #endregion
+
+            #region tag COFINS
+
+            XmlNode nodeCofins = xmlDoc.CreateElement("COFINS");
+            XmlNode nodeCofinsNt = xmlDoc.CreateElement("COFINSNT");
+            XmlNode nodeCofinsNtCst = xmlDoc.CreateElement("CST");
+            nodeCofinsNtCst.InnerText = "08";
+
+            nodeCofinsNt.AppendChild(nodeCofinsNtCst);
+
+            nodeCofins.AppendChild(nodeCofinsNt);
+
+            nodeImposto.AppendChild(nodeCofins);
+
+            #endregion
+
+            return nodeImposto;
         }
 
         #endregion

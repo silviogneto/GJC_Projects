@@ -73,13 +73,13 @@
           <CFOP>5102</CFOP>
           <uCom>ml</uCom>
           <qCom>1.0000</qCom>
-          <vUnCom>12.10</vUnCom>
-          <vProd>12.10</vProd>
+          <vUnCom>11.00</vUnCom>
+          <vProd>11.00</vProd>
           <cEANTrib>
           </cEANTrib>
           <uTrib>ml</uTrib>
           <qTrib>1.0000</qTrib>
-          <vUnTrib>12.10</vUnTrib>
+          <vUnTrib>11.00</vUnTrib>
           <indTot>1</indTot>
         </prod>
         <imposto>

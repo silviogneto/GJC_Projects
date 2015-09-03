@@ -70,6 +70,12 @@
 					<xProd>ODORIZANTE DE AMBIENTES ALECRIM</xProd>
 					<NCM>33074900</NCM>
 					<CFOP>6101 # ALTERAR PARA CFOP VENDA DENTRO DO ESTADO</CFOP>
+					<!--
+					Regras CFOP
+
+					Se cfop == 6101 ou 6102 trocar para 5102
+					se cfop == 5401 ou 5403 ou 6401 ou 6403 trocar para 5405
+					-->
 					<uCom>ml</uCom>
 					<qCom>1.0000</qCom>
 					<vUnCom>11.39 # AUMENTAR CONFORME %</vUnCom>

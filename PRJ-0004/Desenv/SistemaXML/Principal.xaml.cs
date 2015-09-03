@@ -27,6 +27,7 @@ namespace SistemaXML
 
         private string _pastaInicial;
         private string _fileFullName;
+        private Modelo.Importar _importar;
 
         #endregion
 
@@ -36,6 +37,19 @@ namespace SistemaXML
         }
 
         #region Eventos
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this._importar = new Modelo.Importar
+            {
+                NatOp = "VENDA DE MERCADORIA",
+                IndPag = "0",
+                ModFrete = "9",
+                Percent = 10
+            };
+
+            this.gridInfo.DataContext = this._importar;
+        }
 
         private void btnEscolherArquivo_Click(object sender, RoutedEventArgs e)
         {
@@ -98,14 +112,30 @@ namespace SistemaXML
 
         private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            bool manterArquivo = false;
+
             Dispatcher.Invoke(new Action(() =>
             {
                 txtStatus.Text = "Trabalhando em alterações no xml";
+
+                manterArquivo = chkManterArquivo.IsChecked.Value;
             }));
 
             try
             {
+                if (manterArquivo)
+                {
+                    var dir = System.IO.Path.GetDirectoryName(_fileFullName);
+                    var newName = System.IO.Path.GetFileNameWithoutExtension(_fileFullName) + "_original.xml";
+
+                    System.IO.File.Copy(_fileFullName, System.IO.Path.Combine(dir, newName), true);
+                }
+
                 ImportarXml(_fileFullName, (sender as BackgroundWorker));
+
+                MessageBox.Show("Arquivo alterado com sucesso!", "Sistema XML");
+
+                _fileFullName = "";
             }
             catch (Exception ex)
             {
@@ -115,6 +145,7 @@ namespace SistemaXML
             {
                 Dispatcher.Invoke(new Action(() =>
                 {
+                    txtArquivo.Text = "";
                     separador.Visibility = System.Windows.Visibility.Hidden;
                     barraProgresso.Visibility = System.Windows.Visibility.Hidden;
                     txtStatus.Text = "Xml Alterado";
@@ -133,18 +164,8 @@ namespace SistemaXML
 
         private void ImportarXml(string nomeArquivo, BackgroundWorker worker)
         {
-            var imp = new Modelo.Importar();
-            imp.Worker = worker;
-
-            Dispatcher.Invoke(new Action(() =>
-            {
-                imp.NatOp = txtNatOp.Text.Trim();
-                imp.IndPag = txtIndPag.Text.Trim();
-                imp.ModFrete = txtModFrete.Text.Trim();
-                imp.Percent = Convert.ToDouble(txtValorPercent.Text.Trim());
-            }));
-
-            imp.AlterarXml(nomeArquivo);
+            _importar.Worker = worker;
+            _importar.AlterarXml(nomeArquivo);
         }
 
         private bool IsNumber(string texto)
