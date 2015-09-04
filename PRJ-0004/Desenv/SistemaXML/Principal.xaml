@@ -41,26 +41,26 @@
 						<RowDefinition Height="Auto"/>
 					</Grid.RowDefinitions>
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="155" />
+						<ColumnDefinition Width="200" />
 						<ColumnDefinition />
 					</Grid.ColumnDefinitions>
 
 					<Label Grid.Column="0" Grid.Row="0" Content="&lt;natOp&gt;:" FontWeight="Bold" />
-					<TextBox x:Name="txtNatOp" Grid.Column="1" Grid.Row="0" TextWrapping="NoWrap" Text="{Binding NatOp}" VerticalContentAlignment="Center" Padding="5,0" Margin="2" />
+					<TextBox x:Name="txtNatOp" Grid.Column="1" Grid.Row="0" TextWrapping="NoWrap" Text="{Binding NatOp}" VerticalContentAlignment="Center" Padding="5,0" Margin="2" IsEnabled="False" />
 
 					<Label Grid.Column="0" Grid.Row="1" Content="&lt;indPag&gt;:" FontWeight="Bold"/>
-					<TextBox x:Name="txtIndPag" Grid.Column="1" Grid.Row="1" TextWrapping="NoWrap" Text="{Binding IndPag}" VerticalContentAlignment="Center" Padding="5,0" Margin="2" />
+					<TextBox x:Name="txtIndPag" Grid.Column="1" Grid.Row="1" TextWrapping="NoWrap" Text="{Binding IndPag}" VerticalContentAlignment="Center" Padding="5,0" Margin="2" IsEnabled="False" />
 
 					<Label Grid.Column="0" Grid.Row="2" Content="&lt;modFrete&gt;:" FontWeight="Bold"/>
-					<TextBox x:Name="txtModFrete" Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" Text="{Binding ModFrete}" VerticalContentAlignment="Center" Padding="5,0" Margin="2" />
+					<TextBox x:Name="txtModFrete" Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" Text="{Binding ModFrete}" VerticalContentAlignment="Center" Padding="5,0" Margin="2" IsEnabled="False" />
 
-					<Label Grid.Column="0" Grid.Row="3" Content="% a somar nos produtos:" FontWeight="Bold"/>
+					<Label Grid.Column="0" Grid.Row="3" Content="Percentual de Acréscimo da Nota:" FontWeight="Bold"/>
 					<StackPanel Grid.Column="1" Grid.Row="3" Margin="2,2,3,0" Orientation="Horizontal">
 						<TextBox x:Name="txtValorPercent" TextWrapping="NoWrap" Text="{Binding Percent}" VerticalContentAlignment="Center" Padding="5,0" Width="60" PreviewTextInput="txtValorPercent_PreviewTextInput" />
 						<Label Content="%"/>
 					</StackPanel>
 
-					<Button x:Name="btnAlterarXml" Grid.Column="1" Grid.Row="4" Width="100" Margin="0,2,2,3" HorizontalAlignment="Right" Click="btnAlterarXml_Click" Height="30">Alterar Xml</Button>
+					<Button x:Name="btnAlterarXml" Grid.Column="1" Grid.Row="4" Width="100" Margin="0,2,2,4" HorizontalAlignment="Right" Click="btnAlterarXml_Click" Height="30">Alterar Xml</Button>
 				</Grid>
 			</Border>
 		</DockPanel>

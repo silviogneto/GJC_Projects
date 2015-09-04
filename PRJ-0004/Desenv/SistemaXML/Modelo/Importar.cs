@@ -67,45 +67,67 @@ namespace SistemaXML.Modelo
                 provider.NumberDecimalSeparator = ".";
                 provider.NumberGroupSeparator = ",";
 
+                var produtosEliminar = new List<XmlNode>();
+
                 var produtos = xmlDoc.SelectNodes("//nsnfe:det", ns);
                 int progressByProduct = 50 / produtos.Count;
                 foreach (XmlNode node in produtos)
                 {
                     XmlNode prod = node["prod"];
 
-                    var valUnit = Convert.ToDouble(prod["vUnCom"].InnerText, provider);
-                    var novoValor = NovoValorPorPorcentagem(valUnit, Percent);
-
-                    prod["vUnCom"].InnerText = novoValor.ToString("F2", provider);
-                    prod["vUnTrib"].InnerText = novoValor.ToString("F2", provider);
-                    prod["vProd"].InnerText = (Convert.ToDouble(prod["qCom"].InnerText, provider) * novoValor).ToString("F2", provider);
-
                     //Regras CFOP
-
                     //Se cfop == 6101 ou 6102 trocar para 5102
                     //se cfop == 5401 ou 5403 ou 6401 ou 6403 trocar para 5405
                     var cfopAtual = prod["CFOP"].InnerText;
-                    if (cfopAtual == "6101" || cfopAtual == "6102")
-                        prod["CFOP"].InnerText = "5102";
-                    else if (cfopAtual == "5401" || cfopAtual == "5403" || cfopAtual == "6401" || cfopAtual == "6403")
-                        prod["CFOP"].InnerText = "5405";
+                    if (cfopAtual == "6910" || cfopAtual == "5910")
+                    {
+                        produtosEliminar.Add(node);
+                    }
+                    else
+                    {
+                        if (cfopAtual == "6101" || cfopAtual == "6102" || cfopAtual == "5101")
+                            prod["CFOP"].InnerText = "5102";
+                        else if (cfopAtual == "5401" || cfopAtual == "5403" || cfopAtual == "6401" || cfopAtual == "6403")
+                            prod["CFOP"].InnerText = "5405";
 
-                    #region Tag Imposto
+                        var valUnit = Convert.ToDouble(prod["vUnCom"].InnerText, provider);
+                        var novoValor = Truncate(NovoValorPorPorcentagem(valUnit, Percent), 2);
 
-                    XmlNode nodeImposto = node["imposto"];
-                    nodeImposto.InnerText = "";
+                        prod["vUnCom"].InnerText = novoValor.ToString("F2", provider);
+                        prod["vUnTrib"].InnerText = novoValor.ToString("F2", provider);
+                        prod["vProd"].InnerText = (Convert.ToDouble(prod["qCom"].InnerText, provider) * novoValor).ToString("F2", provider);
 
-                    XmlNode nodeImpostoNovo = CriarInfoImposto(xmlDoc, prod["CFOP"].InnerText);
-                    node["imposto"].InnerXml = nodeImpostoNovo.InnerXml;
+                        #region Tag Imposto
 
-                    #endregion
+                        XmlNode nodeImposto = node["imposto"];
+                        nodeImposto.InnerText = "";
 
-                    XmlNode xmlInfoAd = node["infAdProd"];
-                    if (xmlInfoAd != null)
-                        node.RemoveChild(xmlInfoAd);
+                        XmlNode nodeImpostoNovo = CriarInfoImposto(xmlDoc, prod["CFOP"].InnerText);
+                        node["imposto"].InnerXml = nodeImpostoNovo.InnerXml;
+
+                        #endregion
+
+                        XmlNode nodeInfoAd = node["infAdProd"];
+                        if (nodeInfoAd != null)
+                            node.RemoveChild(nodeInfoAd);
+
+                        XmlNode nodeInfCpl = node["infCpl"];
+                        if (nodeInfCpl != null)
+                            node.RemoveChild(nodeInfCpl);
+                    }
 
                     progress = Progresso(progress, progressByProduct);
                 }
+
+                #region Remove produto indesejados
+
+                foreach (XmlNode n in produtosEliminar)
+                {
+                    XmlNode parent = n.ParentNode;
+                    parent.RemoveChild(n);
+                }
+
+                #endregion
 
                 #endregion
 
@@ -257,6 +279,18 @@ namespace SistemaXML.Modelo
             #endregion
 
             return nodeImposto;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="valor"></param>
+        /// <param name="casas"></param>
+        /// <returns></returns>
+        private double Truncate(double valor, int casas)
+        {
+            var formato = Math.Pow(10, casas);
+            return Math.Truncate(valor * formato) / formato;
         }
 
         #endregion

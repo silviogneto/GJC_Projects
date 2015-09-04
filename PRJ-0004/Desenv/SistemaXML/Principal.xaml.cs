@@ -113,6 +113,7 @@ namespace SistemaXML
         private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
             bool manterArquivo = false;
+            bool erro = false;
 
             Dispatcher.Invoke(new Action(() =>
             {
@@ -139,6 +140,7 @@ namespace SistemaXML
             }
             catch (Exception ex)
             {
+                erro = true;
                 MessageBox.Show(string.Format("Não foi possível finalizar a operação.{0}Erro: {1}", Environment.NewLine, ex.Message));
             }
             finally
@@ -148,7 +150,7 @@ namespace SistemaXML
                     txtArquivo.Text = "";
                     separador.Visibility = System.Windows.Visibility.Hidden;
                     barraProgresso.Visibility = System.Windows.Visibility.Hidden;
-                    txtStatus.Text = "Xml Alterado";
+                    txtStatus.Text = erro ? "Erro no processamento do Xml" : "Xml Alterado";
                 }));
             }
         }

@@ -14,7 +14,6 @@ C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML
 C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.pdb
 C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\bin\Debug\SistemaXML.exe
 C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\bin\Debug\SistemaXML.pdb
-C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\SistemaXML.csprojResolveAssemblyReference.cache
 C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\Principal.baml
 C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\Principal.g.cs
 C:\Users\Silvio\Documents\Projetos\GJC_Projects\trunk\PRJ-0004\Desenv\SistemaXML\obj\Debug\App.g.cs
