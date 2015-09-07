@@ -131,6 +131,24 @@ namespace SistemaXML.Modelo
 
                 #endregion
 
+                #region infAdic e cobr
+
+                var nodeInfAdic = xmlDoc.SelectSingleNode("//nsnfe:infAdic", ns);
+                if (nodeInfAdic != null)
+                {
+                    XmlNode parent = nodeInfAdic.ParentNode;
+                    parent.RemoveChild(nodeInfAdic);
+                }
+
+                var nodeCobr = xmlDoc.SelectSingleNode("//nsnfe:cobr", ns);
+                if (nodeCobr != null)
+                {
+                    XmlNode parent = nodeCobr.ParentNode;
+                    parent.RemoveChild(nodeCobr);
+                }
+
+                #endregion
+
                 xmlDoc.Save(nomeArquivo);
 
                 Progresso(100, 0);
