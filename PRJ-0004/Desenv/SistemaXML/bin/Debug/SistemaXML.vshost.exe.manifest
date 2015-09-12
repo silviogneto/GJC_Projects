@@ -4,7 +4,7 @@
   <description asmv2:iconFile="doc-xml.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="SistemaXML" version="1.0.2.6" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="SistemaXML" version="1.0.2.7" language="neutral" processorArchitecture="msil" />
     <commandLine file="SistemaXML.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -44,13 +44,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaXML.exe" size="253440">
-      <assemblyIdentity name="SistemaXML" version="1.0.2.6" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="SistemaXML" version="1.0.2.7" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>fYsgR11tyP96kBNrtg4nR9ZFaqM=</dsig:DigestValue>
+        <dsig:DigestValue>gv1CBbPkrICihl+y20GINLmC1aw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

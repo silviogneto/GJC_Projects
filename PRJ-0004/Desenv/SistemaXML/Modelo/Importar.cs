@@ -235,7 +235,7 @@ namespace SistemaXML.Modelo
             XmlNode nodeCsoSn = xmlDoc.CreateElement("CSOSN");
             if (cfop == "5102")
                 nodeCsoSn.InnerText = "102";
-            else if (cfop == "")
+            else if (cfop == "5405")
                 nodeCsoSn.InnerText = "500";
 
             nodeIcmsSn.AppendChild(nodeCsoSn);
