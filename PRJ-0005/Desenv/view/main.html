@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html data-ng-app="calc">
+<head>
+    <title>Calculadora</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- JS -->
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/model.js"></script>
+    <script src="../js/controller.js"></script>
+</head>
+<body>
+	<div data-ng-controller="CalcControl" tabindex="0" ng-keydown="handleKeyDown($event)" ng-keyup="handlerKeyUp($event)">
+		<div id="display" class="display">
+			<span ng-bind="calcM.result"></span><br />
+
+			<span ng-bind="calcM.operation"></span>
+			<span ng-bind="calcM.workNumber"></span>
+		</div>
+
+		<botoes></botoes>
+	</div>
+</body>
+</html>

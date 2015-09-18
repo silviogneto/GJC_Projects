@@ -1,0 +1,13 @@
+{
+    "name": "Calculator",
+    "description": "A simple Calculator for Chrome",
+    "version": "1.1",
+    "manifest_version": 2,
+    "app": {
+        "background": {
+            "scripts": [ "js/main.js" ]
+        }
+    },
+    "icons": { "16": "resources/calculator_16_background.png", "128": "resources/calculator_128_background.png" },
+    "offline_enabled": true
+}

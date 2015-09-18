@@ -1,0 +1,11 @@
+/*
+http://tableless.com.br/css-reset/
+Autor: Diego Eis
+*/
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    vertical-align:baseline;
+    -webkit-box-sizing: border-box;
+}
